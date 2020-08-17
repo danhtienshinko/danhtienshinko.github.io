@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet');
+
+/* General style */
+body ::selection{background-color: yellow;}
+html,body{height: 100%; width: 100%; color: #555;font-family: 'Oswald', sans-serif;}
+
+/* Effecft */
+@keyframes fade {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes fade_left {
+    from {
+        transform: translateX(-600px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fade_right {
+    from {
+        transform: translateX(600px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fade_up {
+    from {
+        transform: translatey(200px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Button Hover */
+.btn {
+    background-color: goldenrod;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 28px;
+    color: #fff;
+    position: relative;
+}
+
+.btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: goldenrod;
+}
+
+.btn:hover {
+    transition: 0.4s;
+    transform: translateY(3px);
+}
+
+.btn:hover::after {
+    transition: 0.4s;
+    transform: scale(1.4);
+    opacity: 0;
+}
+
+.btn:active {
+    transition: 0.4s;
+    transform: translateY(5px);
+}
+
+/* Top_Header Style*/
+.top_header .left ul {
+    list-style: none;
+    display: inline-block;
+}
+
+.top_header .left ul li {
+    margin-right: 20px;
+    display: inline;
+    cursor: pointer;
+}
+
+.top_header .left ul li a {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.top_header .left ul li a:hover {
+    color: gold;
+}
+
+.top_header .left ul li a{
+    margin-right: 10px;
+}
+
+section.top_header {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    line-height: 50px;
+    height: 50px;
+    background-color: black;
+    text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    animation: 2s fade forwards;
+}
+
+/* Slide header */
+.slide_header:hover .fade {
+    opacity: 1;
+}
+
+.slide_header .carousel-item img {
+    height: 93vh;
+    width: 100%;
+}
+
+.slide_header .carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background-color: gray;
+    opacity: 0;
+    top: 50%;
+}
+
+.slide_header .carousel-control-next:hover {
+    background-color: goldenrod;
+}
+
+.slide_header .carousel-control-prev:hover {
+    background-color: goldenrod;
+}
+
+.slide_header ol li {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.slide_header ol li.active {
+    background-color: goldenrod;
+}
+
+.carousel-caption h1 {
+    opacity: 0;
+    visibility: hidden;
+    animation: 2s fade_left forwards;
+}
+
+.carousel-caption p {
+    opacity: 0;
+    visibility: hidden;
+    animation: 2s fade_right forwards 0.5s;
+}
+
+.carousel-caption .btn {
+    opacity: 0;
+    visibility: hidden;
+    animation: 2s fade_up forwards 0.5s;
+}
+
+.carousel-caption img {
+    opacity: 0;
+    visibility: hidden;
+    animation: 3s fade_up forwards 1s;
+}
+
+/* Footer */
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #607d8b;
+	color: #fff;
+	padding: 10px 10px 0 0;
+}
+
+footer ul {
+    display: flex;
+}
+
+footer i {
+    align-items: center;
+    color: #fff;
+}
+
+footer ul li {
+    margin-left: 16px;
+    list-style: none;
+}
+
+footer p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+	font-size: 14px;
+	align-items: center;
+}
+
+@media (max-width: 1100px) {
+	footer {
+		flex-direction: column;
+	}
+
+	footer p {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	footer ul li {
+		margin: 0 8px;
+	}
+}
